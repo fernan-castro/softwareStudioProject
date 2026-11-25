@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#23312d">
+  <meta name="description" content="Métrica Menta Studio combina estrategia, diseño y tecnología para crear marcas, experiencias digitales y soluciones útiles para negocios en Puerto Rico.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Métrica Menta Studio — Ideas claras. Experiencias que funcionan.">
+  <meta property="og:description" content="Estudio creativo de tecnología. Identidad, web, software y automatización para negocios en Puerto Rico.">
+  <meta property="og:image" content="./og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="./brand-mark.svg">
+  <title>Métrica Menta Studio | Creatividad y tecnología con intención</title>
+  <style>
+    :root {
+      --ink: #23312d;
+      --ink-soft: #35433e;
+      --paper: #f7f4ee;
+      --paper-2: #eee9df;
+      --white: #fffefa;
+      --muted: #737c73;
+      --line: #e1ded5;
+      --sage: #c9d8c9;
+      --sage-deep: #7c9984;
+      --coral: #e77f68;
+      --gold: #d9ad69;
+      --lime: #e2e8aa;
+      --shadow: 0 24px 70px rgba(35,49,45,.11);
+      --radius: 24px;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(1160px, calc(100% - 44px)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(247,244,238,.9); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(225,222,213,.8); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; min-width: max-content; }
+    .brand img { width: 43px; height: 43px; display: block; }
+    .brand-name { font-size: .99rem; line-height: 1.05; font-weight: 850; letter-spacing: -.055em; }
+    .brand-sub { display: block; margin-top: 5px; font-size: .58rem; letter-spacing: .19em; font-weight: 750; color: var(--muted); text-transform: uppercase; }
+    .navlinks { display: flex; align-items: center; gap: 27px; color: #606d65; font-size: .85rem; font-weight: 650; }
+    .navlinks a { transition: color .2s; }
+    .navlinks a:hover { color: var(--coral); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .lang { border: 1px solid var(--line); background: var(--white); color: var(--ink); border-radius: 999px; width: 43px; height: 43px; font-size: .75rem; font-weight: 800; cursor: pointer; }
+    .menu-btn { display: none; border: 1px solid var(--line); background: var(--white); color: var(--ink); width: 43px; height: 43px; border-radius: 13px; cursor: pointer; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 13px 20px; border: 1px solid transparent; border-radius: 999px; background: var(--coral); color: #fffefa; font-size: .88rem; font-weight: 780; letter-spacing: -.01em; cursor: pointer; box-shadow: 0 9px 22px rgba(231,127,104,.18); transition: transform .2s, background .2s, box-shadow .2s; }
+    .btn:hover { background: #d96e58; transform: translateY(-2px); box-shadow: 0 13px 27px rgba(231,127,104,.23); }
+    .btn-dark { background: var(--ink); color: white; box-shadow: none; }
+    .btn-dark:hover { background: #344740; }
+    .btn-quiet { background: transparent; border-color: #cfcfc4; color: var(--ink); box-shadow: none; }
+    .btn-quiet:hover { color: var(--ink); background: #fffefa; border-color: var(--ink); box-shadow: none; }
+    .btn-small { min-height: 43px; padding: 10px 16px; font-size: .82rem; }
+    .hero { position: relative; overflow: hidden; padding: 82px 0 74px; }
+    .hero:before { content: ''; position: absolute; width: 480px; height: 480px; top: -240px; left: -230px; border-radius: 50%; background: rgba(201,216,201,.42); filter: blur(5px); }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 54px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 8px 13px; border: 1px solid #d9dfd4; border-radius: 999px; background: rgba(255,254,250,.7); color: #61766a; font-size: .69rem; line-height: 1; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow-mark { display: inline-block; width: 8px; height: 8px; background: var(--coral); border-radius: 50%; box-shadow: 0 0 0 4px rgba(231,127,104,.13); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 680px; margin: 24px 0 22px; font-family: var(--serif); font-size: clamp(3.05rem, 6vw, 5.5rem); line-height: .99; font-weight: 500; letter-spacing: -.065em; }
+    h1 em { color: var(--sage-deep); font-style: italic; }
+    .hero-copy { max-width: 570px; margin-bottom: 30px; color: var(--muted); font-size: 1.08rem; line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; }
+    .micro { margin-top: 22px; color: #8a9088; font-size: .77rem; }
+    .hero-art { min-height: 495px; position: relative; display: grid; place-items: center; isolation: isolate; }
+    .art-blob { position: absolute; width: 405px; height: 405px; border-radius: 48% 52% 62% 38% / 45% 42% 58% 55%; background: linear-gradient(145deg, #dce4c6, #c0d5c7 50%, #f0c6b4); transform: rotate(-18deg); z-index: -1; }
+    .art-card { position: absolute; width: min(405px, 90%); border: 1px solid rgba(255,255,255,.8); border-radius: 22px; background: rgba(255,254,250,.92); box-shadow: 0 30px 90px rgba(35,49,45,.17); overflow: hidden; transform: rotate(3deg); }
+    .art-top { display: flex; align-items: center; gap: 7px; height: 43px; padding: 0 17px; border-bottom: 1px solid var(--line); background: #fbfaf6; }
+    .art-top i { width: 7px; height: 7px; border-radius: 50%; background: #d7d5cb; }
+    .art-address { flex: 1; margin-left: 8px; padding: 5px 12px; border: 1px solid #ece9e1; border-radius: 7px; color: #9da39a; font-size: .59rem; }
+    .art-body { padding: 25px 27px 28px; }
+    .art-label { color: var(--sage-deep); font-size: .64rem; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
+    .art-headline { max-width: 280px; margin: 10px 0 12px; font-family: var(--serif); font-size: 2.3rem; line-height: .99; letter-spacing: -.055em; }
+    .art-headline span { color: var(--coral); font-style: italic; }
+    .art-line { height: 6px; width: 78%; margin: 8px 0; border-radius: 10px; background: #e9e8df; }
+    .art-line.short { width: 52%; }
+    .art-button { display: inline-block; margin: 11px 0 16px; padding: 8px 13px; border-radius: 999px; background: var(--ink); color: white; font-size: .61rem; font-weight: 750; }
+    .art-image { height: 127px; position: relative; overflow: hidden; border-radius: 13px; background: linear-gradient(120deg, #2e4840, #789585 58%, #e0bd8d); }
+    .art-image:before { content: ''; position: absolute; width: 155px; height: 190px; right: 43px; bottom: -68px; border-radius: 100px 100px 0 0; background: rgba(255,255,255,.28); transform: rotate(16deg); }
+    .art-image:after { content: ''; position: absolute; width: 110px; height: 110px; left: 27px; bottom: -55px; border-radius: 50%; background: rgba(231,127,104,.83); }
+    .art-sticker { position: absolute; right: 0; top: 31px; width: 106px; height: 106px; border-radius: 50%; display: grid; place-items: center; background: var(--coral); color: white; font-family: var(--serif); font-size: 2.1rem; font-style: italic; transform: rotate(10deg); box-shadow: 0 18px 35px rgba(35,49,45,.16); }
+    .float-note { position: absolute; left: 0; bottom: 42px; width: 190px; padding: 15px 17px; border: 1px solid rgba(255,255,255,.85); border-radius: 17px; background: var(--ink); color: white; box-shadow: var(--shadow); transform: rotate(-5deg); }
+    .float-note small { display: block; color: #c4d4c6; font-size: .61rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .float-note strong { display: block; margin-top: 7px; font-family: var(--serif); font-size: 1.27rem; line-height: 1.1; font-weight: 500; }
+    .trust-strip { padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,254,250,.45); }
+    .trust-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 17px; color: #7d857d; font-size: .77rem; font-weight: 670; }
+    .trust-inner span { display: inline-flex; align-items: center; gap: 9px; }
+    .trust-inner b { color: var(--coral); font-size: 1rem; }
+    section { padding: 94px 0; }
+    .section-head { max-width: 700px; margin-bottom: 39px; }
+    .kicker { color: #7c9984; font-size: .7rem; font-weight: 850; letter-spacing: .17em; text-transform: uppercase; }
+    h2 { margin: 12px 0 16px; font-family: var(--serif); font-size: clamp(2.45rem, 4.8vw, 4rem); line-height: 1.04; letter-spacing: -.06em; font-weight: 500; }
+    .section-head p { max-width: 620px; color: var(--muted); font-size: 1rem; line-height: 1.8; margin: 0; }
+    .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .service { min-height: 260px; padding: 25px 22px; border: 1px solid var(--line); border-radius: 19px; background: var(--white); transition: transform .22s, box-shadow .22s, border-color .22s; }
+    .service:hover { transform: translateY(-5px); border-color: #cbd6ca; box-shadow: var(--shadow); }
+    .service-icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 15px; background: #edf1e8; color: var(--ink); }
+    .service:nth-child(2) .service-icon { background: #f8e6df; color: #bd654f; }
+    .service:nth-child(3) .service-icon { background: #f2ebd7; color: #977340; }
+    .service:nth-child(4) .service-icon { background: #e7eee9; color: #5a7d69; }
+    .service-icon svg { width: 22px; height: 22px; }
+    .service h3 { margin: 20px 0 8px; font-size: 1.04rem; letter-spacing: -.035em; }
+    .service p { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.75; }
+    .service-index { display: block; margin-top: 20px; color: #a0a79d; font-size: .65rem; font-weight: 800; letter-spacing: .12em; }
+    .statement { padding: 0 0 95px; }
+    .statement-box { display: grid; grid-template-columns: 1fr .7fr; gap: 35px; align-items: center; padding: 41px 45px; border-radius: 25px; background: var(--ink); color: white; overflow: hidden; position: relative; }
+    .statement-box:after { content: ''; position: absolute; width: 260px; height: 260px; right: -65px; top: -95px; border: 1px solid rgba(201,216,201,.25); border-radius: 50%; box-shadow: 0 0 0 35px rgba(201,216,201,.05), 0 0 0 70px rgba(201,216,201,.035); }
+    .statement-box h2 { max-width: 690px; margin: 0; font-size: clamp(2rem, 3.8vw, 3.25rem); }
+    .statement-box h2 em { color: var(--sage); }
+    .statement-box p { margin: 0; color: #c1cdc4; font-size: .93rem; line-height: 1.8; position: relative; z-index: 1; }
+    .work-section { background: var(--paper-2); }
+    .work-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px; }
+    .work-card { min-height: 310px; padding: 25px; border-radius: 22px; overflow: hidden; position: relative; background: #e5e8dc; }
+    .work-card:nth-child(2) { background: #eadbd2; }
+    .work-card:nth-child(3) { background: #d9e3e0; }
+    .work-card:nth-child(4) { background: #e6dfc9; }
+    .work-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: relative; z-index: 2; }
+    .work-tag { padding: 6px 9px; border: 1px solid rgba(35,49,45,.16); border-radius: 999px; color: #58665e; font-size: .62rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+    .work-number { color: rgba(35,49,45,.52); font-size: .7rem; font-weight: 850; }
+    .work-card h3 { position: relative; z-index: 2; margin: 23px 0 6px; font-family: var(--serif); font-size: 2.15rem; line-height: 1; letter-spacing: -.055em; font-weight: 500; }
+    .work-card p { max-width: 310px; position: relative; z-index: 2; color: #647067; font-size: .84rem; }
+    .work-visual { position: absolute; right: 25px; bottom: 24px; width: 54%; height: 145px; border: 7px solid rgba(255,254,250,.75); border-radius: 14px; background: #fffefa; box-shadow: 0 15px 34px rgba(35,49,45,.12); transform: rotate(-4deg); overflow: hidden; }
+    .work-visual .mini-top { height: 19px; background: #f5f1e9; border-bottom: 1px solid #e8e4db; }
+    .mini-body { padding: 13px; }
+    .mini-kicker { height: 4px; width: 38%; margin-bottom: 8px; border-radius: 5px; background: var(--sage-deep); }
+    .mini-title { height: 9px; width: 70%; margin-bottom: 5px; border-radius: 5px; background: #33433c; }
+    .mini-title.small { width: 48%; }
+    .mini-image { height: 52px; margin-top: 10px; border-radius: 6px; background: linear-gradient(120deg,#536f5d,#c9d8c9 60%,#e77f68); }
+    .work-card:nth-child(2) .work-visual { width: 43%; height: 160px; right: 32px; background: #f8eee6; transform: rotate(5deg); }
+    .work-card:nth-child(2) .mini-image { background: linear-gradient(135deg,#e77f68,#eecf9c 65%,#faf5ed); }
+    .work-card:nth-child(3) .work-visual { width: 58%; height: 145px; transform: rotate(2deg); }
+    .work-card:nth-child(3) .mini-image { background: linear-gradient(135deg,#2e4840,#789585); }
+    .work-card:nth-child(4) .work-visual { width: 46%; height: 158px; transform: rotate(-5deg); }
+    .work-card:nth-child(4) .mini-image { background: linear-gradient(135deg,#d7ad70,#f0dfb8 60%,#94a78d); }
+    .concept-note { margin: 22px 0 0; color: #747c73; font-size: .78rem; }
+    .process-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; }
+    .process-step { padding: 26px 24px; border-top: 1px solid #cdd4c8; }
+    .process-no { color: var(--coral); font-size: .73rem; font-weight: 900; letter-spacing: .15em; }
+    .process-step h3 { margin: 18px 0 8px; font-family: var(--serif); font-size: 1.75rem; font-weight: 500; letter-spacing: -.04em; }
+    .process-step p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.8; }
+    .pricing-section { background: #fbfaf6; }
+    .pricing { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; align-items: stretch; }
+    .price-card { display: flex; flex-direction: column; padding: 25px; border: 1px solid var(--line); border-radius: 20px; background: var(--white); }
+    .price-card.featured { border: 1.5px solid var(--sage-deep); box-shadow: 0 17px 46px rgba(35,49,45,.08); }
+    .price-label { color: var(--sage-deep); font-size: .66rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .price-card h3 { margin: 11px 0 0; font-size: 1.15rem; }
+    .price { margin: 10px 0 2px; font-family: var(--serif); font-size: 2.75rem; line-height: 1; letter-spacing: -.06em; }
+    .price small { color: var(--muted); font-family: var(--sans); font-size: .72rem; letter-spacing: 0; }
+    .price-note { min-height: 47px; margin: 10px 0 17px; color: var(--muted); font-size: .83rem; }
+    .features { flex: 1; margin: 0 0 22px; padding: 16px 0 0; border-top: 1px solid var(--line); list-style: none; }
+    .features li { position: relative; margin: 10px 0; padding-left: 21px; color: #59655d; font-size: .83rem; }
+    .features li:before { content: '✳'; position: absolute; left: 0; color: var(--coral); font-size: .77rem; }
+    .price-card .btn { width: 100%; }
+    .fineprint { margin: 21px auto 0; max-width: 760px; color: #81887e; text-align: center; font-size: .75rem; }
+    .contact-section { padding: 95px 0; }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 50px; align-items: start; }
+    .contact-copy h2 { max-width: 510px; }
+    .contact-copy p { max-width: 440px; color: var(--muted); line-height: 1.8; }
+    .contact-aside { display: flex; align-items: center; gap: 12px; margin-top: 27px; color: #718077; font-size: .81rem; }
+    .contact-aside span { width: 35px; height: 35px; display: grid; place-items: center; border-radius: 50%; background: var(--sage); color: var(--ink); }
+    .contact-form { padding: 29px; border: 1px solid var(--line); border-radius: 22px; background: var(--white); box-shadow: 0 16px 45px rgba(35,49,45,.055); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
+    .field.full { grid-column: 1/-1; }
+    .field label { color: #58645c; font-size: .75rem; font-weight: 750; }
+    .field input, .field select, .field textarea { width: 100%; border: 1px solid #e1dfd6; border-radius: 11px; outline: none; padding: 12px 13px; background: #fffefa; color: var(--ink); font-size: .87rem; transition: border .18s, box-shadow .18s; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--sage-deep); box-shadow: 0 0 0 3px rgba(124,153,132,.13); }
+    .field textarea { min-height: 115px; resize: vertical; }
+    .form-help { margin: 13px 0 0; color: #898f85; font-size: .69rem; line-height: 1.6; }
+    .form-status { display: none; margin: 12px 0 0; color: #486c55; font-size: .8rem; }
+    .footer { padding: 30px 0 25px; background: var(--ink); color: white; }
+    .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .footer .brand-name { color: white; }
+    .footer .brand-sub { color: #b8c6bb; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 20px; color: #c6d0c7; font-size: .78rem; }
+    .footer-links a:hover { color: var(--lime); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 20px; color: #a9b6aa; font-size: .7rem; }
+    .disclaimer { max-width: 1000px; margin: 17px 0 0; color: #8f9e91; font-size: .67rem; line-height: 1.7; }
+    .skip { position: absolute; left: -9999px; top: 10px; padding: 10px; background: white; color: black; z-index: 100; }
+    .skip:focus { left: 10px; }
+    @media (max-width: 980px) {
+      .navlinks { gap: 16px; font-size: .8rem; }
+      .hero-grid { gap: 25px; }
+      .hero-art { min-height: 430px; }
+      .art-blob { width: 340px; height: 340px; }
+      .services { grid-template-columns: repeat(2,1fr); }
+      .statement-box { grid-template-columns: 1fr; gap: 18px; }
+    }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .nav { min-height: 72px; }
+      .brand img { width: 40px; height: 40px; }
+      .menu-btn { display: inline-grid; place-items: center; }
+      .navlinks { display: none; position: absolute; top: 71px; left: 0; right: 0; padding: 18px 22px 22px; border-bottom: 1px solid var(--line); background: var(--paper); flex-direction: column; align-items: stretch; gap: 15px; }
+      .navlinks.open { display: flex; }
+      .navlinks a { padding: 7px 0; }
+      .nav-actions > .btn { display: none; }
+      .hero { padding: 60px 0 45px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 18px; }
+      h1 { font-size: clamp(3.1rem, 13vw, 4.6rem); }
+      .hero-copy { font-size: 1rem; }
+      .hero-art { min-height: 420px; margin: 0 -7px; }
+      .art-card { width: min(380px, 86%); }
+      .art-blob { width: 330px; height: 330px; }
+      .float-note { left: 4px; bottom: 19px; width: 160px; }
+      .art-sticker { right: 5px; top: 26px; width: 82px; height: 82px; font-size: 1.65rem; }
+      section { padding: 72px 0; }
+      .statement { padding: 0 0 72px; }
+      .statement-box { padding: 31px 25px; }
+      .services { grid-template-columns: 1fr 1fr; }
+      .service { min-height: 250px; padding: 20px 17px; }
+      .work-grid { grid-template-columns: 1fr; }
+      .work-card { min-height: 285px; }
+      .process-grid { grid-template-columns: 1fr; gap: 5px; }
+      .process-step { padding: 20px 10px; }
+      .pricing { grid-template-columns: 1fr; }
+      .price-card { padding: 24px; }
+      .price-note { min-height: 0; }
+      .contact-grid { grid-template-columns: 1fr; gap: 27px; }
+      .contact-form { padding: 22px 17px; }
+      .footer-main { align-items: flex-start; flex-direction: column; }
+      .footer-links { gap: 14px; }
+    }
+    @media (max-width: 420px) {
+      .services { grid-template-columns: 1fr; }
+      .service { min-height: 0; }
+      .form-grid { grid-template-columns: 1fr; gap: 0; }
+      .field.full { grid-column: auto; }
+      .hero-art { min-height: 380px; }
+      .art-card { width: 88%; }
+      .art-body { padding: 20px; }
+      .art-headline { font-size: 1.95rem; }
+      .float-note { bottom: 4px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *:before, *:after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenido" data-es="Saltar al contenido" data-en="Skip to content">Saltar al contenido</a>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="Métrica Menta Studio, inicio">
+        <img src="./brand-mark.svg" alt="" width="43" height="43">
+        <span><span class="brand-name">Métrica Menta</span><span class="brand-sub">Creative technology studio</span></span>
+      </a>
+      <nav class="navlinks" id="navlinks" aria-label="Navegación principal">
+        <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="#proyectos" data-es="Exploraciones" data-en="Work">Exploraciones</a>
+        <a href="#proceso" data-es="Proceso" data-en="Approach">Proceso</a>
+        <a href="#precios" data-es="Precios" data-en="Pricing">Precios</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+        <a class="btn btn-small" href="#contacto" data-es="Hablemos ↗" data-en="Let's talk ↗">Hablemos ↗</a>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-mark"></span><span data-es="Estudio creativo de tecnología" data-en="Creative technology studio">Estudio creativo de tecnología</span></div>
+          <h1 data-es="Ideas claras.<br><em>Experiencias</em> que funcionan." data-en="Clear ideas.<br><em>Experiences</em> that work.">Ideas claras.<br><em>Experiencias</em> que funcionan.</h1>
+          <p class="hero-copy" data-es="Unimos creatividad, diseño y tecnología para convertir buenas ideas en marcas, experiencias digitales y herramientas que hacen más fácil el día a día de un negocio." data-en="We bring creativity, design, and technology together to turn good ideas into brands, digital experiences, and tools that make everyday business easier.">Unimos creatividad, diseño y tecnología para convertir buenas ideas en marcas, experiencias digitales y herramientas que hacen más fácil el día a día de un negocio.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contacto" data-es="Cuéntanos tu idea ↗" data-en="Tell us your idea ↗">Cuéntanos tu idea ↗</a>
+            <a class="btn btn-quiet" href="#servicios" data-es="Explorar servicios" data-en="Explore services">Explorar servicios</a>
+          </div>
+          <p class="micro" data-es="Trabajamos con negocios e ideas en todo Puerto Rico." data-en="Working with businesses and ideas across Puerto Rico.">Trabajamos con negocios e ideas en todo Puerto Rico.</p>
+        </div>
+        <div class="hero-art" aria-label="Composición visual que representa diseño y tecnología">
+          <div class="art-blob"></div>
+          <div class="art-card">
+            <div class="art-top"><i></i><i></i><i></i><div class="art-address">tu-proxima-idea.com</div></div>
+            <div class="art-body">
+              <div class="art-label" data-es="Una idea, muchas posibilidades" data-en="One idea, many possibilities">Una idea, muchas posibilidades</div>
+              <div class="art-headline" data-es="Haz espacio para lo <span>nuevo.</span>" data-en="Make room for <span>what's next.</span>">Haz espacio para lo <span>nuevo.</span></div>
+              <div class="art-line"></div><div class="art-line short"></div>
+              <span class="art-button" data-es="Descubrir más ↗" data-en="Discover more ↗">Descubrir más ↗</span>
+              <div class="art-image"></div>
+            </div>
+          </div>
+          <div class="art-sticker" aria-hidden="true">M.</div>
+          <div class="float-note"><small data-es="Lo que nos mueve" data-en="What moves us">Lo que nos mueve</small><strong data-es="Creatividad con intención." data-en="Creativity with purpose.">Creatividad con intención.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="wrap trust-inner">
+        <span><b>✳</b><span data-es="Diseño con intención" data-en="Intentional design">Diseño con intención</span></span>
+        <span><b>✳</b><span data-es="Tecnología útil" data-en="Useful technology">Tecnología útil</span></span>
+        <span><b>✳</b><span data-es="Colaboración cercana" data-en="Close collaboration">Colaboración cercana</span></span>
+        <span><b>✳</b><span data-es="Perspectiva bilingüe" data-en="Bilingual perspective">Perspectiva bilingüe</span></span>
+      </div>
+    </div>
+
+    <section id="servicios">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-es="Lo que podemos crear" data-en="What we can create">Lo que podemos crear</div>
+          <h2 data-es="De una buena idea a algo que puedas usar." data-en="From a good idea to something you can use.">De una buena idea a algo que puedas usar.</h2>
+          <p data-es="Cada proyecto es distinto. Comenzamos por entender lo que necesitas y combinamos las disciplinas adecuadas para construir una solución clara, bonita y práctica." data-en="Every project is different. We start by understanding what you need, then bring together the right disciplines to build a solution that is clear, thoughtful, and practical.">Cada proyecto es distinto. Comenzamos por entender lo que necesitas y combinamos las disciplinas adecuadas para construir una solución clara, bonita y práctica.</p>
+        </div>
+        <div class="services">
+          <article class="service">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5 9.5 14 13 17.5 20 10.5M14 10.5h6v6"/><path d="M4 4.5h7"/></svg></div>
+            <h3 data-es="Identidad y diseño" data-en="Brand identity & design">Identidad y diseño</h3>
+            <p data-es="Una identidad visual coherente que ayuda a tu negocio a comunicar quién es y qué lo hace diferente." data-en="A cohesive visual identity that helps your business communicate who it is and what makes it different.">Una identidad visual coherente que ayuda a tu negocio a comunicar quién es y qué lo hace diferente.</p>
+            <span class="service-index">01 / BRAND</span>
+          </article>
+          <article class="service">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="2.5"/><path d="M3.5 8h17M7 6h.01M10 6h.01M7 12h4M7 15h7"/></svg></div>
+            <h3 data-es="Web y experiencias digitales" data-en="Web & digital experiences">Web y experiencias digitales</h3>
+            <p data-es="Sitios web responsivos y experiencias fáciles de navegar, diseñadas para presentar tu negocio con claridad." data-en="Responsive websites and easy-to-use digital experiences designed to present your business clearly.">Sitios web responsivos y experiencias fáciles de navegar, diseñadas para presentar tu negocio con claridad.</p>
+            <span class="service-index">02 / DIGITAL</span>
+          </article>
+          <article class="service">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9zM9 1.8v2.4M15 1.8v2.4M9 19.8v2.4M15 19.8v2.4M1.8 9h2.4M1.8 15h2.4M19.8 9h2.4M19.8 15h2.4"/></svg></div>
+            <h3 data-es="Software a la medida" data-en="Custom software">Software a la medida</h3>
+            <p data-es="Herramientas y aplicaciones pensadas alrededor de una necesidad real, no de funciones que no necesitas." data-en="Tools and applications shaped around a real need—not features you don't need.">Herramientas y aplicaciones pensadas alrededor de una necesidad real, no de funciones que no necesitas.</p>
+            <span class="service-index">03 / BUILD</span>
+          </article>
+          <article class="service">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/><circle cx="12" cy="12" r="4"/></svg></div>
+            <h3 data-es="Automatización e integración" data-en="Automation & integration">Automatización e integración</h3>
+            <p data-es="Conectamos procesos y herramientas para reducir tareas repetitivas y hacer que el trabajo fluya mejor." data-en="We connect processes and tools to reduce repetitive tasks and help work flow more smoothly.">Conectamos procesos y herramientas para reducir tareas repetitivas y hacer que el trabajo fluya mejor.</p>
+            <span class="service-index">04 / CONNECT</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="statement">
+      <div class="wrap">
+        <div class="statement-box">
+          <h2 data-es="No creemos en tecnología por tecnología. Creemos en hacer las cosas <em>mejor.</em>" data-en="We don't believe in technology for technology's sake. We believe in making things <em>better.</em>">No creemos en tecnología por tecnología. Creemos en hacer las cosas <em>mejor.</em></h2>
+          <p data-es="El resultado importa, pero también cómo llegamos ahí: escuchando, haciendo buenas preguntas y cuidando cada detalle. Trabajamos de forma cercana para que la solución tenga sentido para las personas que la van a usar." data-en="The result matters, but so does how we get there: listening, asking better questions, and caring about the details. We work closely with you so the solution makes sense for the people who will use it.">El resultado importa, pero también cómo llegamos ahí: escuchando, haciendo buenas preguntas y cuidando cada detalle. Trabajamos de forma cercana para que la solución tenga sentido para las personas que la van a usar.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="work-section" id="proyectos">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-es="Exploraciones del estudio" data-en="Studio explorations">Exploraciones del estudio</div>
+          <h2 data-es="Así conectamos ideas, diseño y funcionalidad." data-en="How we connect ideas, design, and function.">Así conectamos ideas, diseño y funcionalidad.</h2>
+          <p data-es="Una muestra de direcciones creativas y posibilidades digitales. Son conceptos de demostración creados para mostrar nuestro enfoque, no proyectos de clientes." data-en="A selection of creative directions and digital possibilities. These are demonstration concepts created to show our approach, not client projects.">Una muestra de direcciones creativas y posibilidades digitales. Son conceptos de demostración creados para mostrar nuestro enfoque, no proyectos de clientes.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-meta"><span class="work-tag" data-es="Concepto de marca + web" data-en="Brand + web concept">Concepto de marca + web</span><span class="work-number">MM / 001</span></div>
+            <h3>Brisa Clima</h3>
+            <p data-es="Una presencia digital clara para un negocio de climatización ficticio." data-en="A clear digital presence for a fictional air-conditioning business.">Una presencia digital clara para un negocio de climatización ficticio.</p>
+            <div class="work-visual"><div class="mini-top"></div><div class="mini-body"><div class="mini-kicker"></div><div class="mini-title"></div><div class="mini-title small"></div><div class="mini-image"></div></div></div>
+          </article>
+          <article class="work-card">
+            <div class="work-meta"><span class="work-tag" data-es="Identidad visual" data-en="Visual identity">Identidad visual</span><span class="work-number">MM / 002</span></div>
+            <h3>Casa Oliva</h3>
+            <p data-es="Un universo visual cálido para una cafetería conceptual." data-en="A warm visual world for a conceptual café.">Un universo visual cálido para una cafetería conceptual.</p>
+            <div class="work-visual"><div class="mini-top"></div><div class="mini-body"><div class="mini-kicker"></div><div class="mini-title"></div><div class="mini-title small"></div><div class="mini-image"></div></div></div>
+          </article>
+          <article class="work-card">
+            <div class="work-meta"><span class="work-tag" data-es="Diseño de interfaz" data-en="Interface design">Diseño de interfaz</span><span class="work-number">MM / 003</span></div>
+            <h3>Ordena</h3>
+            <p data-es="Un panel conceptual para organizar solicitudes y tareas de un equipo." data-en="A conceptual dashboard for organizing a team's requests and tasks.">Un panel conceptual para organizar solicitudes y tareas de un equipo.</p>
+            <div class="work-visual"><div class="mini-top"></div><div class="mini-body"><div class="mini-kicker"></div><div class="mini-title"></div><div class="mini-title small"></div><div class="mini-image"></div></div></div>
+          </article>
+          <article class="work-card">
+            <div class="work-meta"><span class="work-tag" data-es="Experiencia digital" data-en="Digital experience">Experiencia digital</span><span class="work-number">MM / 004</span></div>
+            <h3>Isla Verde</h3>
+            <p data-es="Una experiencia digital conceptual para una marca de hospitalidad." data-en="A conceptual digital experience for a hospitality brand.">Una experiencia digital conceptual para una marca de hospitalidad.</p>
+            <div class="work-visual"><div class="mini-top"></div><div class="mini-body"><div class="mini-kicker"></div><div class="mini-title"></div><div class="mini-title small"></div><div class="mini-image"></div></div></div>
+          </article>
+        </div>
+        <p class="concept-note" data-es="* Todos los nombres y proyectos de esta sección son ficticios y se presentan únicamente como conceptos de portafolio." data-en="* All names and projects in this section are fictional and presented solely as portfolio concepts.">* Todos los nombres y proyectos de esta sección son ficticios y se presentan únicamente como conceptos de portafolio.</p>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-es="Cómo trabajamos" data-en="How we work">Cómo trabajamos</div>
+          <h2 data-es="Un proceso simple. Un propósito compartido." data-en="A simple process. A shared purpose.">Un proceso simple. Un propósito compartido.</h2>
+          <p data-es="No empezamos con una plantilla. Empezamos con una conversación para entender el reto y decidir qué vale la pena construir." data-en="We don't start with a template. We start with a conversation to understand the challenge and decide what is worth building.">No empezamos con una plantilla. Empezamos con una conversación para entender el reto y decidir qué vale la pena construir.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step"><span class="process-no">01 / DESCUBRIR</span><h3 data-es="Escuchar y entender" data-en="Listen and understand">Escuchar y entender</h3><p data-es="Conocemos tu negocio, tus clientes, tus metas y lo que hoy te está haciendo falta." data-en="We learn about your business, your customers, your goals, and what's missing today.">Conocemos tu negocio, tus clientes, tus metas y lo que hoy te está haciendo falta.</p></article>
+          <article class="process-step"><span class="process-no">02 / DEFINIR</span><h3 data-es="Dar forma a la idea" data-en="Shape the idea">Dar forma a la idea</h3><p data-es="Acordamos el alcance, la dirección visual, las funcionalidades y los próximos pasos antes de construir." data-en="We agree on scope, visual direction, functionality, and next steps before building.">Acordamos el alcance, la dirección visual, las funcionalidades y los próximos pasos antes de construir.</p></article>
+          <article class="process-step"><span class="process-no">03 / CREAR</span><h3 data-es="Construir y mejorar" data-en="Build and refine">Construir y mejorar</h3><p data-es="Creamos, probamos y refinamos la solución contigo para que esté lista para el uso real." data-en="We create, test, and refine the solution with you so it's ready for real use.">Creamos, probamos y refinamos la solución contigo para que esté lista para el uso real.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section" id="precios">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-es="Punto de partida" data-en="A place to start">Punto de partida</div>
+          <h2 data-es="Un alcance claro desde el principio." data-en="A clear scope from the start.">Un alcance claro desde el principio.</h2>
+          <p data-es="Estos paquetes iniciales se enfocan en desarrollo web. Para identidad, software y automatización, preparamos una propuesta según las necesidades del proyecto." data-en="These starter packages focus on web development. For branding, software, and automation, we'll prepare a proposal based on the project's needs.">Estos paquetes iniciales se enfocan en desarrollo web. Para identidad, software y automatización, preparamos una propuesta según las necesidades del proyecto.</p>
+        </div>
+        <div class="pricing">
+          <article class="price-card">
+            <div class="price-label" data-es="Para comenzar" data-en="Get started">Para comenzar</div>
+            <h3>Website Launch</h3><div class="price">$399 <small data-es="/ pago único" data-en="/ one-time">/ pago único</small></div>
+            <p class="price-note" data-es="Una página profesional para presentar tu negocio." data-en="A professional one-page site to introduce your business.">Una página profesional para presentar tu negocio.</p>
+            <ul class="features"><li data-es="Una página, hasta 5 secciones" data-en="One page, up to 5 sections">Una página, hasta 5 secciones</li><li data-es="Diseño adaptable a móviles" data-en="Mobile-responsive design">Diseño adaptable a móviles</li><li data-es="Contacto directo y mapa" data-en="Direct contact and map">Contacto directo y mapa</li><li data-es="SEO básico y una revisión" data-en="Basic SEO and one revision">SEO básico y una revisión</li></ul>
+            <a class="btn btn-quiet" href="#contacto" data-es="Consultar paquete" data-en="Ask about this package">Consultar paquete</a>
+          </article>
+          <article class="price-card featured">
+            <div class="price-label" data-es="Más completo" data-en="More complete">Más completo</div>
+            <h3>Business Website</h3><div class="price">$699 <small data-es="/ pago único" data-en="/ one-time">/ pago único</small></div>
+            <p class="price-note" data-es="Para negocios que necesitan presentar más información." data-en="For businesses that need to present more information.">Para negocios que necesitan presentar más información.</p>
+            <ul class="features"><li data-es="Hasta 5 páginas" data-en="Up to 5 pages">Hasta 5 páginas</li><li data-es="Galería o portafolio" data-en="Gallery or portfolio">Galería o portafolio</li><li data-es="Formulario de consulta" data-en="Inquiry form">Formulario de consulta</li><li data-es="SEO básico y dos revisiones" data-en="Basic SEO and two revisions">SEO básico y dos revisiones</li></ul>
+            <a class="btn" href="#contacto" data-es="Consultar paquete ↗" data-en="Ask about this package ↗">Consultar paquete ↗</a>
+          </article>
+          <article class="price-card">
+            <div class="price-label" data-es="Soporte continuo" data-en="Ongoing support">Soporte continuo</div>
+            <h3>Website Care</h3><div class="price">$59 <small data-es="/ mensual" data-en="/ monthly">/ mensual</small></div>
+            <p class="price-note" data-es="Para mantener tu sitio actualizado después del lanzamiento." data-en="Keep your website updated after launch.">Para mantener tu sitio actualizado después del lanzamiento.</p>
+            <ul class="features"><li data-es="Hasta 1 hora de cambios pequeños al mes" data-en="Up to 1 hour of small monthly edits">Hasta 1 hora de cambios pequeños al mes</li><li data-es="Revisión básica de enlaces" data-en="Basic link checks">Revisión básica de enlaces</li><li data-es="Soporte por correo" data-en="Email support">Soporte por correo</li><li data-es="Dominio y servicios externos aparte" data-en="Domain and third-party services extra">Dominio y servicios externos aparte</li></ul>
+            <a class="btn btn-quiet" href="#contacto" data-es="Consultar soporte" data-en="Ask about support">Consultar soporte</a>
+          </article>
+        </div>
+        <p class="fineprint" data-es="Precios iniciales orientativos. El alcance final, fechas, revisiones, dominio, alojamiento e integraciones se detallan en una cotización escrita antes de comenzar." data-en="Indicative starting prices. Final scope, timeline, revisions, domain, hosting, and integrations are specified in a written quote before work begins.">Precios iniciales orientativos. El alcance final, fechas, revisiones, dominio, alojamiento e integraciones se detallan en una cotización escrita antes de comenzar.</p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <div class="kicker" data-es="Empecemos la conversación" data-en="Let's start a conversation">Empecemos la conversación</div>
+          <h2 data-es="¿Qué te gustaría hacer posible?" data-en="What would you like to make possible?">¿Qué te gustaría hacer posible?</h2>
+          <p data-es="Cuéntanos un poco sobre tu negocio, idea o reto. Revisaremos lo que necesitas y te responderemos con un próximo paso claro." data-en="Tell us a little about your business, idea, or challenge. We'll review what you need and respond with a clear next step.">Cuéntanos un poco sobre tu negocio, idea o reto. Revisaremos lo que necesitas y te responderemos con un próximo paso claro.</p>
+          <div class="contact-aside"><span>✳</span><span data-es="Proyectos en todo Puerto Rico · Atención en español e inglés" data-en="Projects across Puerto Rico · Spanish and English">Proyectos en todo Puerto Rico · Atención en español e inglés</span></div>
+        </div>
+        <form class="contact-form" name="project-inquiry" method="POST" action="/gracias.html" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="project-inquiry">
+          <p style="display:none"><label>Do not fill this out: <input name="bot-field"></label></p>
+          <div class="form-grid">
+            <div class="field"><label for="name" data-es="Tu nombre" data-en="Your name">Tu nombre</label><input id="name" name="name" type="text" autocomplete="name" required placeholder="Nombre y apellido"></div>
+            <div class="field"><label for="email" data-es="Correo electrónico" data-en="Email address">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="nombre@correo.com"></div>
+            <div class="field full"><label for="business" data-es="Negocio o proyecto" data-en="Business or project">Negocio o proyecto</label><input id="business" name="business" type="text" placeholder="Nombre de tu negocio (opcional)"></div>
+            <div class="field full"><label for="service" data-es="¿Qué necesitas?" data-en="What do you need?">¿Qué necesitas?</label><select id="service" name="service" required><option value="" data-es="Selecciona un servicio" data-en="Select a service">Selecciona un servicio</option><option value="Brand identity" data-es="Identidad y diseño" data-en="Brand identity & design">Identidad y diseño</option><option value="Website" data-es="Sitio web" data-en="Website">Sitio web</option><option value="Custom software" data-es="Software a la medida" data-en="Custom software">Software a la medida</option><option value="Automation" data-es="Automatización e integración" data-en="Automation & integration">Automatización e integración</option><option value="Not sure yet" data-es="No estoy seguro/a todavía" data-en="Not sure yet">No estoy seguro/a todavía</option></select></div>
+            <div class="field full"><label for="message" data-es="Cuéntanos un poco más" data-en="Tell us a little more">Cuéntanos un poco más</label><textarea id="message" name="message" required placeholder="¿Qué te gustaría crear o mejorar?"></textarea></div>
+          </div>
+          <button class="btn btn-dark" type="submit" data-es="Enviar mensaje ↗" data-en="Send inquiry ↗">Enviar mensaje ↗</button>
+          <p class="form-help" data-es="Al enviar, autorizas que usemos estos datos únicamente para responder a tu consulta. Este formulario requiere activar Netlify Forms y configurar las notificaciones del sitio después de desplegarlo." data-en="By submitting, you allow us to use these details only to respond to your inquiry. This form requires Netlify Forms and site notifications to be enabled after deployment.">Al enviar, autorizas que usemos estos datos únicamente para responder a tu consulta. Este formulario requiere activar Netlify Forms y configurar las notificaciones del sitio después de desplegarlo.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-main">
+        <a class="brand" href="#inicio"><img src="./brand-mark.svg" alt="" width="43" height="43"><span><span class="brand-name">Métrica Menta</span><span class="brand-sub">Creative technology studio</span></span></a>
+        <div class="footer-links"><a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a><a href="#proyectos" data-es="Exploraciones" data-en="Work">Exploraciones</a><a href="#proceso" data-es="Proceso" data-en="Approach">Proceso</a><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Métrica Menta Studio.</span><span data-es="Hecho con intención en Puerto Rico." data-en="Made with purpose in Puerto Rico.">Hecho con intención en Puerto Rico.</span></div>
+      <p class="disclaimer" data-es="Métrica Menta Studio es un nombre conceptual de trabajo pendiente de búsqueda y verificación legal. Los proyectos de portafolio son demostraciones ficticias, no trabajos de clientes. Los paquetes y precios son propuestas iniciales sujetas a cotización. No se garantizan resultados comerciales." data-en="Métrica Menta Studio is a conceptual working name pending legal clearance. Portfolio projects are fictional demonstrations, not client work. Packages and prices are initial proposals subject to quotation. Business results are not guaranteed.">Métrica Menta Studio es un nombre conceptual de trabajo pendiente de búsqueda y verificación legal. Los proyectos de portafolio son demostraciones ficticias, no trabajos de clientes. Los paquetes y precios son propuestas iniciales sujetas a cotización. No se garantizan resultados comerciales.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'es';
+    const langButton = document.getElementById('langBtn');
+    const menuButton = document.getElementById('menuBtn');
+    const nav = document.getElementById('navlinks');
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-es][data-en]').forEach((element) => {
+        const value = element.getAttribute(`data-${lang}`);
+        if (value !== null) element.innerHTML = value;
+      });
+      langButton.textContent = lang === 'es' ? 'EN' : 'ES';
+      langButton.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a español');
+      menuButton.setAttribute('aria-label', lang === 'es' ? 'Abrir menú' : 'Open menu');
+      document.querySelectorAll('input, textarea').forEach((field) => {
+        if (field.id === 'name') field.placeholder = lang === 'es' ? 'Nombre y apellido' : 'First and last name';
+        if (field.id === 'email') field.placeholder = lang === 'es' ? 'nombre@correo.com' : 'name@email.com';
+        if (field.id === 'business') field.placeholder = lang === 'es' ? 'Nombre de tu negocio (opcional)' : 'Your business name (optional)';
+        if (field.id === 'message') field.placeholder = lang === 'es' ? '¿Qué te gustaría crear o mejorar?' : 'What would you like to create or improve?';
+      });
+      const select = document.getElementById('service');
+      select.options[0].text = lang === 'es' ? 'Selecciona un servicio' : 'Choose a service';
+    }
+
+    langButton.addEventListener('click', () => setLanguage(currentLang === 'es' ? 'en' : 'es'));
+    menuButton.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    setLanguage('es');
+  </script>
+</body>
+</html>
